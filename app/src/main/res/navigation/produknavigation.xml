@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/produknavigation"
+    app:startDestination="@id/indexProdukFragment">
+
+    <fragment
+        android:id="@+id/indexProdukFragment"
+        android:name="digital.sarana.taniku.produk.index.IndexProdukFragment"
+        android:label="index_produk_fragment"
+        tools:layout="@layout/index_produk_fragment" >
+        <action
+            android:id="@+id/action_indexProdukFragment_to_createProdukFragment"
+            app:destination="@id/createProdukFragment" />
+        <action
+            android:id="@+id/action_indexProdukFragment_to_detailProdukFragment"
+            app:destination="@id/detailProdukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProdukFragment"
+        android:name="digital.sarana.taniku.produk.create.CreateProdukFragment"
+        android:label="create_produk_fragment"
+        tools:layout="@layout/create_produk_fragment" >
+        <action
+            android:id="@+id/action_createProdukFragment_to_indexProdukFragment"
+            app:popUpTo="@id/indexProdukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProdukFragment"
+        android:name="digital.sarana.taniku.produk.detail.DetailProdukFragment"
+        android:label="detail_produk_fragment"
+        tools:layout="@layout/detail_produk_fragment" >
+        <argument
+            android:name="produkData"
+            app:argType="digital.sarana.taniku.network.produk.ProdukData" />
+        <action
+            android:id="@+id/action_detailProdukFragment_to_editProdukFragment"
+            app:destination="@id/editProdukFragment" />
+        <action
+            android:id="@+id/action_detailProdukFragment_to_indexProdukFragment"
+            app:popUpTo="@id/indexProdukFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProdukFragment"
+        android:name="digital.sarana.taniku.produk.edit.EditProdukFragment"
+        android:label="edit_produk_fragment"
+        tools:layout="@layout/edit_produk_fragment" >
+        <action
+            android:id="@+id/action_editProdukFragment_to_indexProdukFragment"
+            app:popUpTo="@id/indexProdukFragment" />
+        <argument
+            android:name="produkData"
+            app:argType="digital.sarana.taniku.network.produk.ProdukData" />
+    </fragment>
+</navigation>

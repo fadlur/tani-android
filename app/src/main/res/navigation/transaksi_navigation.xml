@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transaksi_navigation"
+    app:startDestination="@id/indexTransaksiFragment">
+
+    <fragment
+        android:id="@+id/indexTransaksiFragment"
+        android:name="digital.sarana.taniku.transaksi.index.IndexTransaksiFragment"
+        android:label="index_transaksi_fragment"
+        tools:layout="@layout/index_transaksi_fragment" >
+        <action
+            android:id="@+id/action_indexTransaksiFragment_to_createTransaksiFragment"
+            app:destination="@id/createTransaksiFragment" />
+        <action
+            android:id="@+id/action_indexTransaksiFragment_to_detailTransaksiFragment"
+            app:destination="@id/detailTransaksiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTransaksiFragment"
+        android:name="digital.sarana.taniku.transaksi.create.CreateTransaksiFragment"
+        android:label="create_transaksi_fragment"
+        tools:layout="@layout/create_transaksi_fragment" >
+        <action
+            android:id="@+id/action_createTransaksiFragment_to_indexTransaksiFragment"
+            app:popUpTo="@id/indexTransaksiFragment" />
+        <action
+            android:id="@+id/action_createTransaksiFragment_to_formTransaksiFragment"
+            app:destination="@id/formTransaksiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formTransaksiFragment"
+        android:name="digital.sarana.taniku.transaksi.form.FormTransaksiFragment"
+        android:label="form_transaksi_fragment"
+        tools:layout="@layout/form_transaksi_fragment" >
+        <action
+            android:id="@+id/action_formTransaksiFragment_to_indexTransaksiFragment"
+            app:popUpTo="@id/indexTransaksiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTransaksiFragment"
+        android:name="digital.sarana.taniku.transaksi.detail.DetailTransaksiFragment"
+        android:label="detail_transaksi_fragment"
+        tools:layout="@layout/detail_transaksi_fragment" />
+</navigation>

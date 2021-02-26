@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Taniku</string>
+    <string name="auth_token">AuthToken</string>
+    <string name="access_token">AccessToken</string>
+    <string name="token_type">TokenType</string>
+</resources>
